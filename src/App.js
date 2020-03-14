@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
-import "./styles.css";
+import React, { useState, useEffect } from 'react'
+import './styles.css'
 
 const getData = async () => {
-  const data = await fetch("https://api.kanye.rest/").then(a => a.json());
+  const data = await fetch('https://api.kanye.rest/').then(a => a.json())
 
-  return data.quote;
-};
+  return data.quote
+}
 
 const App = () => {
-  const [quote, setQuote] = useState();
+  const [quote, setQuote] = useState()
 
   const getMore = () => {
-    getData().then(setQuote);
-  };
+    getData().then(setQuote)
+  }
 
   useEffect(() => {
-    getData().then(setQuote);
-  }, []);
+    getData().then(setQuote)
+  }, [])
 
   return (
     <main>
@@ -29,7 +29,7 @@ const App = () => {
         <h1>wait a tad fam</h1>
       )}
     </main>
-  );
-};
+  )
+}
 
-export default App;
+export default App
