@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 
-export default () => {
-  const [quote, setQuote] = useState();
-  const getData = async () => {
-    const data = await fetch("https://api.kanye.rest/").then(a => a.json());
+const getData = async () => {
+  const data = await fetch("https://api.kanye.rest/").then(a => a.json());
 
-    return data.quote;
-  };
+  return data.quote;
+};
+
+const App = () => {
+  const [quote, setQuote] = useState();
+
   const getMore = () => {
     getData().then(setQuote);
   };
@@ -29,3 +31,5 @@ export default () => {
     </main>
   );
 };
+
+export default App;
