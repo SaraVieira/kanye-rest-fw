@@ -3,7 +3,6 @@ import './styles.css'
 
 const getData = async () => {
   const data = await fetch('https://api.kanye.rest/').then(a => a.json())
-  
   return data.quote
 }
 
