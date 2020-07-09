@@ -8,7 +8,7 @@ const getData = async () => {
 }
 
 const App = () => {
-  const [quote, setQuote] = useState()
+  const [quote, setQuote] = useState('')
   const getMore = () => {
     getData().then(setQuote)
   }
